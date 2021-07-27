@@ -39,7 +39,18 @@ router.get('/movies/:id', (req, res) => {
   } else {
     return res.sendStatus(404);
   }
-  
+
+});
+
+router.post('/contact', (req, res) => {
+  const body = req.body;
+  const {name, email, consulta} = body;
+
+  if (name && email && consulta) {
+    return res.sendStatus(201);
+  } else{
+    return res.sendStatus(400)
+  }
 })
 
 
